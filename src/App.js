@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import React, { useState } from 'react'
+import Scores from'./components/Scores.js'
+import Music from './components/Music.js'
+
+const App = () => {
+ 
+  const [ isMuted, setIsMuted ] = useState(false)
+
+  const toggleMuted = ()=> {
+    setIsMuted(!isMuted)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='column-container'>
+     
+      <div className='column'>
+        <div className="container left" id='container-left'>
+          <button className="muteBtn" onClick={toggleMuted}>
+            {isMuted ? 'Unmute' : 'Mute'}
+          </button>
+        </div>
+        <Music isMuted={isMuted}/>
+      </div>
+      <div className='column'>
+        <Scores isMuted={isMuted}/>
+      </div >
     </div>
-  );
+  )
 }
 
 export default App;

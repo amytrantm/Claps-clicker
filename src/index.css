@@ -1,13 +1,115 @@
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
+  background-color: rgb(250, 195, 250);
+}
+.column-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  min-width: 650px;
+}
+.column {
+  margin: 10px;
+  margin-top: 0px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 100%;
+  height: calc(100vh - 40px);
+}
+.container.left {
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(rgb(243, 231, 243),rgb(245, 206, 245),rgb(248, 167, 248));
+}
+
+.column-header {
+  font-size: 25px;
+  position: relative;
+  top: 8px;
+  background-color: lightcyan;
+}
+#claps_emoji {
+  user-select: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 200px;
+}
+
+#claps_emoji:active {
+  transform: translateY(8px);
+}
+
+.counter-container {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.cps-container {
+  font-size: 20px;
+}
+
+#score_container {
+  margin: 3px;
+  padding: 40px;
+  align-self: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(rgb(243, 231, 243),rgb(245, 206, 245),rgb(248, 167, 248));
+}
+
+.producer {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  background-color:burlywood;
+}
+.producer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producer-title {
+  font-size: 20px;
+}
+
+.producer button {
+  font-size: 15px;
+  width: 50px;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(32, 1, 32);
+}
+
+
+.small-btn {
+  font-size: 2em;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+.muteBtn {
+  font-size: large;
+  width: 100px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
 }
