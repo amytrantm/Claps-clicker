@@ -3,7 +3,7 @@ import useSound from 'use-sound'
 import applauseSound from '../applause.mp3'
 import handClapSound from '../hand-clap-1.mp3'
 
- const Scores = (props) => {
+ const Claps = (props) => {
    const {isMuted} = props
    
    const [claps, setClaps] = useState(0);
@@ -11,12 +11,12 @@ import handClapSound from '../hand-clap-1.mp3'
    //use-sound hook
    const [playApplause, { stop: stopApplause }] = useSound(
       applauseSound,
-      { volume: 0.2 ,
+      { volume: 0.5 ,
       soundEnabled: true,
       },
     );
 
-   const [playbackRate, setPlaybackRate] = React.useState(0.75);
+   const [playbackRate, setPlaybackRate] = React.useState(0.50);
 
    //hover
    const [playClap] = useSound(handClapSound, {
@@ -31,7 +31,7 @@ import handClapSound from '../hand-clap-1.mp3'
          setClaps(claps + 1)
       } else{
          setClaps(claps + 1)
-         setPlaybackRate(playbackRate + 0.1);
+         setPlaybackRate(playbackRate + 0.05);
          playClap();
       }
    }
@@ -53,8 +53,9 @@ import handClapSound from '../hand-clap-1.mp3'
             >
             👏
          </div>
+         <p>{isMuted ? "Turn sound on for applause 🔝" : ""}</p>
       </div>
    );
 }
 
-export default Scores
+export default Claps

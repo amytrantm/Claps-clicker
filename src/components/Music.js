@@ -5,7 +5,13 @@ import SoundHelix from '../SoundHelix-Song-6.mp3'
 const  Music= (props) => {
    const { isMuted } = props
 
-   const [play, { isPlaying, stop }] = useSound(SoundHelix); 
+   //hook
+   const [playMusic, { isPlaying, stop }] = useSound(
+      SoundHelix,
+      {volumn: 0.05}
+      ); 
+
+   console.log(useSound(SoundHelix))
 
    if (isMuted && isPlaying) {
       stop();
@@ -15,7 +21,7 @@ const  Music= (props) => {
       if (isMuted) {
          stop()
       } else {
-         isPlaying ? stop() : play()
+         isPlaying ? stop() : playMusic()
       }
    }
    
@@ -27,6 +33,7 @@ const  Music= (props) => {
                className={isPlaying ? "fa fa-lg fa-stop-circle" : "fa fa-lg fa-play-circle" }>
             </i>
          </div>
+         <p>{isMuted && !isPlaying ? "Turn sound on for music 🔝 " : ""}</p>
       </div>
    );
 }

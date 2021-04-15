@@ -1,7 +1,7 @@
 import './App.css';
 
 import React, { useState } from 'react'
-import Scores from'./components/Scores.js'
+import Claps from'./components/Claps.js'
 import Music from './components/Music.js'
 
 const App = () => {
@@ -17,13 +17,13 @@ const App = () => {
       <div className='column'>
         <div className="container left" id='container-left'>
           <button className="muteBtn" onClick={toggleMuted}>
-            {isMuted ? 'Unmute' : 'Mute'}
+            {isMuted ? '🔇' : '🔊'}
           </button>
         </div>
         <Music isMuted={isMuted}/>
       </div>
       <div className='column'>
-        <Scores isMuted={isMuted}/>
+        <Claps isMuted={isMuted}/>
       </div >
     </div>
   )
